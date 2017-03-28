@@ -6,11 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>CIS 487 Chat TEST</title>
 
-	<link rel="icon" sizes="192x192" href="images/app-icon-192.png">
-	<link rel="icon" sizes="128x128" href="images/app-icon-128.png">
-	<link rel="apple-touch-icon" sizes="128x128" href="images/app-icon-128.png">
-	<link rel="apple-touch-icon-precomposed" sizes="128x128" href="images/app-icon-128.png">
-
 	<!-- Polymer -->
 	<script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
 
@@ -24,7 +19,6 @@
 </head>
 
 <body unresolved fullbleed>
-
 
 <template is="auto-binding">
 
@@ -45,8 +39,8 @@
 	    <section layout vertical id="onlineList">
 	    	<core-item label="Online Now" class="subdue" layout horizontal center></core-item>
 
-	   		<template repeat="{{cat in cats}}">
-	   			<core-item label="{{cat}}"></core-item>
+	   		<template repeat="{{dude in dudes}}">
+	   			<core-item label="{{dude}}"></core-item>
 	   		</template>
 	    </section>
   	</core-header-panel>

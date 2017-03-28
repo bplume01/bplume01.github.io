@@ -1,23 +1,23 @@
 (function() {
     'use strict';
 
-    var uuid, avatar, color, cat;
+    var uuid, avatar, color, dude;
 
-    // Assign a uuid made of a random cat and a random color
+    // Assign a uuid made of a random dude and a random color
     var randomColor = function() {
         var colors = ['navy', 'slate', 'olive', 'moss', 'chocolate', 'buttercup', 'maroon', 'cerise', 'plum', 'orchid'];
         return colors[(Math.random() * colors.length) >>> 0];
     };
 
     var randomCat = function() {
-        var cats = ['tabby', 'bengal', 'persian', 'mainecoon', 'ragdoll', 'sphynx', 'siamese', 'korat', 'japanesebobtail', 'abyssinian', 'scottishfold'];
-        return cats[(Math.random() * cats.length) >>> 0];
+        var dudes = ['bernie','einstein','gates','hillary','jobs','michelle','obama','putin','rick','trump','washington'];
+        return dudes[(Math.random() * dudes.length) >>> 0];
     };
 
     color = randomColor();
-    cat = randomCat();
-    uuid = color + '-' + cat;
-    avatar = 'images/' + cat + '.jpg';
+    dude = randomCat();
+    uuid = color + '-' + dude;
+    avatar = 'images/' + dude + '.jpg';
 
     function showNewest() {
         //document.querySelector('core-scaffold').$.headerPanel.scroller.scrollTop = document.querySelector('.chat-list').scrollHeight;
@@ -55,11 +55,11 @@
     template.getListWithOnlineStatus = function(list) {
         [].forEach.call(list, function(l) {
             // sanitize avatars
-            var catName = (l.uuid + '').split('-')[1];
-            l.avatar = 'images/' + catName + '.jpg';
+            var dudeName = (l.uuid + '').split('-')[1];
+            l.avatar = 'images/' + dudeName + '.jpg';
 
-            if (catName === undefined || /\s/.test(l.uuid)) {
-                l.uuid = 'fail-cat';
+            if (dudeName === undefined || /\s/.test(l.uuid)) {
+                l.uuid = 'fail-dude';
                 console.log('Oh you, I made this demo open so nice devs can play with, but you are soiling everything :-(');
             }
 
@@ -80,7 +80,7 @@
 
     template.subscribeCallback = function(e) {
         if(template.$.sub.messages.length > 0) {
-            this.displayChatList(pastMsgs.concat(this.getListWithOnlineStatus(template.$.sub.messages)));
+            this.displayChatList(pastMsgs.condude(this.getListWithOnlineStatus(template.$.sub.messages)));
         }
     };
 
@@ -95,7 +95,7 @@
         // who are online
         if(d.action === 'join') {
             if(d.uuid.length > 35) { // console
-                d.uuid = 'the-mighty-big-cat';
+                d.uuid = 'the-mighty-big-dude';
             }
             onlineUuids.push(d.uuid);
         } else {
@@ -108,7 +108,7 @@
         i++;
 
         // display at the left column
-        template.cats = onlineUuids;
+        template.dudes = onlineUuids;
         // update the status at the main column
         if(template.messageList.length > 0) {
             template.messageList = this.getListWithOnlineStatus(template.messageList);
