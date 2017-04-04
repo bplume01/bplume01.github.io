@@ -22,7 +22,7 @@
 
 <template is="auto-binding">
 
-<core-pubnub publish_key="pub-c-5e3a2795-b4f7-4e4c-9761-70005dbf5e44" subscribe_key="sub-c-7a412af2-153d-11e7-a5a9-0619f8945a4f" uuid="{{uuid}}">
+<core-pubnub publish_key="pub-c-4dd66f50-6ed0-4300-9713-bfe8ced7b5e7" subscribe_key="sub-c-7fde5abc-13ac-11e7-9093-0619f8945a4f" uuid="{{uuid}}">
 	<core-pubnub-subscribe channel="polymer-chat" id="sub" on-callback="{{subscribeCallback}}" on-presence="{{presenceChanged}}" on-error="{{error}}">
 	    <core-pubnub-publish channel="polymer-chat" message="" id="pub" on-error="{{error}}"></core-pubnub-publish>
 		<core-pubnub-history schannel="polymer-chat" count="30" on-success="{{historyRetrieved}}" on-error="{{error}}"></core-pubnub-history>

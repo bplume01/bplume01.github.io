@@ -16,7 +16,7 @@
 
     color = randomColor();
     dude = randomCat();
-    uuid = color + '-' + dude;
+    uuid = dude;
     avatar = 'images/' + dude + '.jpg';
 
     function showNewest() {
